@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 const { InjectManifest } = require("workbox-webpack-plugin");
-const WorkboxPlugin = require('workbox-webpack-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
 // TODO: Add CSS loaders and babel to webpack.
@@ -33,7 +32,7 @@ module.exports = () => {
         name: "Just Another Text Editor",
         short_name: "JATE",
         description: "Track text input",
-        background_color: "#7eb4e2",
+        background_color: "#000000",
         theme_color: "#7eb4e2",
         start_url: "/",
         publicPath: "/",
@@ -49,10 +48,7 @@ module.exports = () => {
 
     module: {
       rules: [
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: "asset/resource",
-        },
+        
         {
           test: /\.css$/i,
           use: ["style-loader", "css-loader"],
